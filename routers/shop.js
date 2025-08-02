@@ -18,7 +18,11 @@ router.get("/", (req, res, next) => {
 
   // res.render() selalu menerima 2 argumen -> 1. Nama file view (tanpa ekstensi) & 2. Data yang akan dikirim ke view tersebut
 
-  res.render("shop", { prods: products, docTitle: "Shop" });
+  res.render("shop", {
+    prods: products,
+    pageTitle: "Shop",
+    path: "/", // Ensure 'path' is passed to the view
+  });
 });
 
 module.exports = router;
